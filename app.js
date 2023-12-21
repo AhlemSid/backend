@@ -12,7 +12,7 @@ const articleRouter =require("./routes/article.route")
 app.use('/api/articles', articleRouter);
 
 // Connexion à la base données
-mongoose.connect(process.env.DATABASE,{
+mongoose.connect(process.env.DATABASECLOUD,{
 useNewUrlParser: true,
 useUnifiedTopology: true
 })
@@ -29,3 +29,4 @@ res.send("Bibliothèque");
 app.use('/api/categories', categorieRouter);
 app.listen(process.env.PORT, () => {
 console.log(`Server is listening on port ${process.env.PORT}`); });
+module.exports = app;
