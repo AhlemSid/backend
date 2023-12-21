@@ -8,6 +8,8 @@ dotenv.config()
 app.use(express.json());
 const scategorieRouter =require("./routes/scategorie.route")
 app.use('/api/scategories', scategorieRouter);
+const articleRouter =require("./routes/article.route")
+app.use('/api/articles', articleRouter);
 
 // Connexion à la base données
 mongoose.connect(process.env.DATABASE,{
